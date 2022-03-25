@@ -30,7 +30,14 @@ class Melon:
             return f"{self.color} {self.weight:.2f} lbs {self.melon_type}"
 
 
-# FIXME: Add Squash class definition here.
+
 class Squash(Melon):
     
-    
+    """override the prep variable so that Squash is painted green"""
+
+    def prep(self):
+        robots.cleanerbot.clean(self)
+        robots.stickerbot.apply_logo(self)
+        robots.painterbot.paint(self)
+
+
